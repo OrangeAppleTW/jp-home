@@ -2,43 +2,84 @@
 const stages = [
   {
     stage: "STAGE 1",
-    name: "Minecraft",
-    sub: "ゲームが、最初の教科書",
-    desc: "大好きなマインクラフトの世界でプログラミングの考え方を体験。指示を与えてキャラクターを動かすことで、論理的思考の基礎を自然に身につけます。",
+    name: "Minecraft & Roblox",
+    tagline: "在遊戲中學習編程",
+    taglineJa: "ゲームの世界で、コードを体験する",
     tag: "入門",
     tagColor: "bg-[#e6faf9] text-[#00c4b3]",
-    accent: "border-[#00c4b3]",
+    borderColor: "border-[#00c4b3]",
+    numColor: "text-[#00c4b3]",
+    bgAccent: "bg-[#e6faf9]",
     icon: "⛏️",
+    courses: [
+      {
+        title: "Minecraft Coding",
+        subtitle: "Virtual Logic × Redstone Circuits",
+        desc: "子どもたちが大好きな3Dの世界でグラフィカルコマンドを使いながら、ロジック・計算思考・レッドストーン回路を学びます。能動的な学習への情熱を引き出します。",
+      },
+      {
+        title: "Roblox AI Game Design",
+        subtitle: "Game Dev × Generative AI",
+        desc: "GenAIツールを活用しながら、Luaスクリプトの概念を学習。3Dパルクールレベルや消えるトラップをデザインし、マルチプレイヤーゲームを公開するところまで挑戦します。",
+      },
+    ],
   },
   {
     stage: "STAGE 2",
     name: "Scratch",
-    sub: "自分でゲームを作る喜びを知る",
-    desc: "視覚的なブロックを使って、本格的なゲームを自分の手で作ります。「動かす」だけでなく「創る」楽しさを発見する段階です。",
+    tagline: "用簡單/直覺的視覺化介面開發遊戲",
+    taglineJa: "直感的なビジュアルインターフェースで、ゲームを作る",
     tag: "初級",
     tagColor: "bg-orange-50 text-[#ffa300]",
-    accent: "border-[#ffa300]",
+    borderColor: "border-[#ffa300]",
+    numColor: "text-[#ffa300]",
+    bgAccent: "bg-orange-50",
     icon: "🎮",
+    courses: [
+      {
+        title: "Scratch プログラミング",
+        subtitle: "ビジュアルブロック × ゲーム制作",
+        desc: "コードを書かなくてもブロックを組み合わせるだけでゲームが作れます。「動かす」から「創る」へ——自分だけのゲームを完成させる達成感が、次の学習への原動力になります。",
+      },
+    ],
   },
   {
     stage: "STAGE 3",
     name: "Python & JavaScript",
-    sub: "プロと同じ言語で、本格開発へ",
-    desc: "テキストベースのプログラミング言語に移行。引き続きゲーム開発を中心に、世界中のエンジニアが使う本格的なコードを習得。国際資格（ITS）の取得を目指せます。",
+    tagline: "用真正的程式語言開發遊戲",
+    taglineJa: "本物のプログラミング言語で、ゲームを開発する",
     tag: "中級 ／ ITS対応",
     tagColor: "bg-red-50 text-[#ff5859]",
-    accent: "border-[#ff5859]",
+    borderColor: "border-[#ff5859]",
+    numColor: "text-[#ff5859]",
+    bgAccent: "bg-red-50",
     icon: "💻",
+    courses: [
+      {
+        title: "Python / JavaScript",
+        subtitle: "テキストコード × ゲーム・アプリ開発",
+        desc: "世界中のエンジニアが使う本格的な言語でゲーム開発に挑戦。テキストコードへの移行後も「ゲームを作る」というテーマを保ちながら、実践的なスキルを習得します。この段階でMicrosoft認定の国際資格（ITS）の受験が可能です。",
+      },
+    ],
   },
   {
     stage: "STAGE 4",
-    name: "Web ／ DB ／ AI",
-    sub: "AIを作る側へ",
-    desc: "Webアプリ開発からデータベース設計、古典的なアルゴリズムの実装、そして自分でAIを組み込んだプログラムの開発まで挑戦します。",
+    name: "Web / DB / AI",
+    tagline: "AIを作る側へ",
+    taglineJa: "AIを創るエンジニアへ",
     tag: "上級",
     tagColor: "bg-purple-50 text-purple-600",
-    accent: "border-purple-400",
+    borderColor: "border-purple-400",
+    numColor: "text-purple-500",
+    bgAccent: "bg-purple-50",
     icon: "🤖",
+    courses: [
+      {
+        title: "Web / Database / AI",
+        subtitle: "アルゴリズム × AIプログラミング",
+        desc: "HTML・CSS・データベースを組み合わせたWebアプリ開発から、古典的なアルゴリズムの実装、そして自分でAIを組み込んだプログラムの開発まで。使う側から、創る側へ。",
+      },
+    ],
   },
 ];
 ---
@@ -48,7 +89,6 @@ const stages = [
     <p class="text-[#00c4b3] font-bold text-sm text-center mb-3 tracking-widest uppercase">
       コースの流れ
     </p>
-
     <h2 class="text-3xl sm:text-4xl font-black text-center text-gray-900 mb-4">
       ゲームから始めて、<span class="text-[#00c4b3]">AIクリエイター</span>へ
     </h2>
@@ -56,31 +96,45 @@ const stages = [
       マインクラフトから始まり、段階的にスキルアップ。お子さまのペースで進められます。
     </p>
 
-    <div class="space-y-6">
-      {
-        stages.map((s, i) => (
-          <div class={`flex gap-6 bg-white border-l-4 ${s.accent} rounded-2xl shadow-sm p-6 sm:p-8`}>
-            <!-- 番号 & アイコン -->
-            <div class="flex flex-col items-center gap-2 shrink-0">
-              <span class="text-3xl">{s.icon}</span>
-              {i < stages.length - 1 && (
-                <div class="w-0.5 h-8 bg-gray-200 mt-1" />
-              )}
-            </div>
-
-            <!-- コンテンツ -->
+    <div class="space-y-8">
+      {stages.map((s) => (
+        <div class={`rounded-3xl border-2 ${s.borderColor} overflow-hidden`}>
+          <!-- ステージヘッダー -->
+          <div class={`${s.bgAccent} px-8 py-5 flex flex-wrap items-center gap-4`}>
+            <span class="text-3xl">{s.icon}</span>
             <div class="flex-1">
-              <div class="flex flex-wrap items-center gap-3 mb-2">
-                <span class="text-xs font-bold text-gray-400 tracking-widest uppercase">{s.stage}</span>
-                <span class={`text-xs font-bold px-3 py-1 rounded-full ${s.tagColor}`}>{s.tag}</span>
+              <div class="flex flex-wrap items-center gap-3 mb-1">
+                <span class={`text-xs font-black tracking-widest uppercase ${s.numColor}`}>{s.stage}</span>
+                <span class={`text-xs font-bold px-3 py-1 rounded-full bg-white/70 ${s.numColor}`}>{s.tag}</span>
               </div>
-              <h3 class="text-xl font-black text-gray-900 mb-1">{s.name}</h3>
-              <p class="text-sm font-bold text-gray-500 mb-3">「{s.sub}」</p>
-              <p class="text-gray-600 leading-relaxed">{s.desc}</p>
+              <h3 class="text-2xl font-black text-gray-900">{s.name}</h3>
+              <p class={`text-sm font-bold ${s.numColor}`}>{s.taglineJa}</p>
             </div>
           </div>
-        ))
-      }
+
+          <!-- コンテンツ本体 -->
+          <div class="p-8">
+            <div class={`grid gap-6 ${s.courses.length > 1 ? "md:grid-cols-2" : "md:grid-cols-2"}`}>
+              <!-- コース説明 -->
+              <div class={`space-y-5 ${s.courses.length === 1 ? "md:col-span-1" : ""}`}>
+                {s.courses.map((c) => (
+                  <div>
+                    <p class="font-black text-gray-900 mb-0.5">{c.title}</p>
+                    <p class={`text-xs font-bold mb-2 ${s.numColor}`}>{c.subtitle}</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">{c.desc}</p>
+                  </div>
+                ))}
+              </div>
+
+              <!-- 画像プレースホルダー -->
+              <div class={`${s.bgAccent} rounded-2xl flex flex-col items-center justify-center gap-3 min-h-[180px] ${s.courses.length === 1 ? "md:col-span-1" : "md:col-span-1 md:row-span-1"}`}>
+                <span class="text-5xl opacity-30">{s.icon}</span>
+                <p class="text-xs text-gray-400 font-bold">画像を追加予定</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   </div>
 </section>

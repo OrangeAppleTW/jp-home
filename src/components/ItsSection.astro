@@ -1,36 +1,90 @@
 ---
+const supportedExams = [
+  { name: "Python", nameJa: "パイソン" },
+  { name: "JavaScript", nameJa: "ジャバスクリプト" },
+  { name: "Computational Thinking", nameJa: "計算論的思考" },
+];
 ---
 
-<section id="its" class="py-24 px-6 bg-[#e6faf9]">
-  <div class="max-w-4xl mx-auto text-center">
-    <p class="text-[#00c4b3] font-bold text-sm mb-3 tracking-widest uppercase">
+<section id="its" class="py-24 px-6 bg-gray-50">
+  <div class="max-w-5xl mx-auto">
+
+    <p class="text-[#00c4b3] font-bold text-sm text-center mb-3 tracking-widest uppercase">
       国際資格
     </p>
-
-    <h2 class="text-3xl sm:text-4xl font-black text-gray-900 mb-6">
+    <h2 class="text-3xl sm:text-4xl font-black text-center text-gray-900 mb-4">
       学んだ力を、<span class="text-[#00c4b3]">世界に証明する</span>
     </h2>
-
-    <p class="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto mb-12">
-      Python・JavaScriptを習得した生徒は、Microsoftが認定する国際IT資格
-      <strong class="text-gray-900">「ITS（IT Specialist）」</strong>
-      の受験に挑戦できます。学力の証明だけでなく、子どもたちの大きな自信になります。
+    <p class="text-center text-gray-500 mb-16 max-w-xl mx-auto">
+      OrangeAppleのカリキュラムは、国際的に認められた資格取得に直結しています。
     </p>
 
-    <!-- 3つの実績 -->
-    <div class="grid sm:grid-cols-3 gap-6 mb-10">
-      <div class="bg-white rounded-2xl p-6 shadow-sm">
-        <p class="text-4xl font-black text-[#00c4b3] mb-2">Microsoft</p>
-        <p class="text-gray-600 text-sm">認定の国際IT資格</p>
-      </div>
-      <div class="bg-white rounded-2xl p-6 shadow-sm">
-        <p class="text-4xl font-black text-[#ffa300] mb-2">約80%</p>
-        <p class="text-gray-600 text-sm">台湾での合格率実績</p>
-      </div>
-      <div class="bg-white rounded-2xl p-6 shadow-sm">
-        <p class="text-4xl font-black text-[#ff5859] mb-2">Stage 3〜</p>
-        <p class="text-gray-600 text-sm">Python / JS 修了後に受験可能</p>
+    <!-- ITS 本体カード -->
+    <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-sm mb-6">
+      <div class="flex flex-col sm:flex-row gap-8 items-start">
+
+        <!-- ロゴ（大きく） -->
+        <img
+          src="https://global2.mindhub.com/cms/files/ITS-500x500-stacked.png"
+          alt="IT Specialist (ITS) Logo"
+          class="w-48 h-48 object-contain shrink-0"
+        />
+
+        <!-- 右：ITS の客観的情報 -->
+        <div class="flex flex-col gap-5 flex-1">
+          <div>
+            <h3 class="text-xl font-black text-gray-900 mb-2">
+              IT Specialist <span class="text-[#00c4b3]">（ITS）</span>
+            </h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              <strong class="text-gray-900">Certiport（Pearson VUE）</strong>が提供する国際IT資格。
+              Cisco・SAS・ISTEなど世界中の有名企業・教育機関から認められています。
+            </p>
+            <p class="text-sm text-gray-600 leading-relaxed mt-2">
+              米国大学評議会（<strong class="text-gray-900">ACE</strong>）は、
+              ITS試験1科目の合格ごとに<strong class="text-gray-900">大学単位3単位</strong>の取得を推奨しています。
+            </p>
+          </div>
+
+          <!-- ITS の客観的特徴 -->
+          <div class="flex gap-2 flex-wrap">
+            <span class="bg-gray-100 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">世界共通</span>
+            <span class="bg-gray-100 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">ACE推奨 3単位 / 科目</span>
+            <span class="bg-gray-100 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">Pearson VUE 認定</span>
+          </div>
+
+          <!-- OrangeApple 対応科目 -->
+          <div>
+            <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">
+              OrangeAppleで受験できる科目
+            </p>
+            <div class="flex flex-wrap gap-2">
+              {supportedExams.map((e) => (
+                <span class="inline-flex flex-col bg-[#e6faf9] border border-[#00c4b3]/30 rounded-xl px-4 py-2">
+                  <span class="font-black text-[#00c4b3] text-sm leading-tight">{e.name}</span>
+                  <span class="text-xs text-gray-500">{e.nameJa}</span>
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
+
+    <!-- OrangeApple の実績（別出し強調） -->
+    <div class="bg-[#00c4b3] rounded-2xl px-8 py-6 flex flex-col sm:flex-row items-center gap-4">
+      <div class="text-center sm:text-left">
+        <p class="text-white/70 text-xs font-bold uppercase tracking-widest mb-1">OrangeAppleの実績</p>
+        <p class="text-white text-4xl font-black">約 80%</p>
+        <p class="text-white/80 text-sm mt-1">台湾での ITS 合格率実績</p>
+      </div>
+      <div class="w-px bg-white/20 hidden sm:block self-stretch" />
+      <p class="text-white/90 text-sm leading-relaxed sm:flex-1">
+        台湾では累計 80,000 名以上の受講生の中から、多くの生徒がITS資格の取得に成功しています。
+        OrangeAppleのカリキュラムが、試験合格に直結する実践力を育てます。
+      </p>
+    </div>
+
   </div>
 </section>
