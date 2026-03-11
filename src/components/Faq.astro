@@ -1,0 +1,54 @@
+---
+const faqs = [
+  {
+    q: "何歳から受講できますか？",
+    a: "小学1年生（6歳）から受講いただけます。マインクラフトコースはプログラミング未経験でも楽しく始められます。",
+  },
+  {
+    q: "プログラミング未経験でも大丈夫ですか？",
+    a: "はい。Stage 1のマインクラフトコースは完全未経験から始められます。ゲームを通じて自然にプログラミングの考え方が身につきます。",
+  },
+  {
+    q: "パソコンは必要ですか？",
+    a: "Stage 2以降はPCが必要です。お持ちでない場合はお気軽にご相談ください。",
+  },
+  {
+    q: "英語や数学が苦手でも大丈夫ですか？",
+    a: "問題ありません。コードを読み書きする力は、授業を通じて自然に身につきます。",
+  },
+  {
+    q: "国際資格（ITS）とは何ですか？",
+    a: "Microsoftが認定する国際IT資格「IT Specialist（ITS）」です。Stage 3（Python・JavaScript）修了後に受験でき、台湾での合格率は約80%です。",
+  },
+  {
+    q: "AIを学ぶのは難しくないですか？",
+    a: "ゲームや作品づくりを通じてAIの考え方を体感的に学ぶため、難しくありません。Stage 4まで進んだ生徒が自分でAIを組み込んだプログラムを完成させています。",
+  },
+];
+---
+
+<section id="faq" class="py-24 px-6 bg-gray-50">
+  <div class="max-w-3xl mx-auto">
+    <p class="text-[#00c4b3] font-bold text-sm text-center mb-3 tracking-widest uppercase">
+      FAQ
+    </p>
+
+    <h2 class="text-3xl sm:text-4xl font-black text-center text-gray-900 mb-16">
+      よくある質問
+    </h2>
+
+    <div class="space-y-4">
+      {
+        faqs.map((faq) => (
+          <details class="bg-white rounded-2xl shadow-sm group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none font-bold text-gray-900 hover:text-[#00c4b3] transition-colors">
+              <span>{faq.q}</span>
+              <span class="text-[#00c4b3] text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="px-6 pb-6 text-gray-600 leading-relaxed">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

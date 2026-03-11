@@ -1,0 +1,86 @@
+---
+const stages = [
+  {
+    stage: "STAGE 1",
+    name: "Minecraft",
+    sub: "ゲームが、最初の教科書",
+    desc: "大好きなマインクラフトの世界でプログラミングの考え方を体験。指示を与えてキャラクターを動かすことで、論理的思考の基礎を自然に身につけます。",
+    tag: "入門",
+    tagColor: "bg-[#e6faf9] text-[#00c4b3]",
+    accent: "border-[#00c4b3]",
+    icon: "⛏️",
+  },
+  {
+    stage: "STAGE 2",
+    name: "Scratch",
+    sub: "自分でゲームを作る喜びを知る",
+    desc: "視覚的なブロックを使って、本格的なゲームを自分の手で作ります。「動かす」だけでなく「創る」楽しさを発見する段階です。",
+    tag: "初級",
+    tagColor: "bg-orange-50 text-[#ffa300]",
+    accent: "border-[#ffa300]",
+    icon: "🎮",
+  },
+  {
+    stage: "STAGE 3",
+    name: "Python & JavaScript",
+    sub: "プロと同じ言語で、本格開発へ",
+    desc: "テキストベースのプログラミング言語に移行。引き続きゲーム開発を中心に、世界中のエンジニアが使う本格的なコードを習得。国際資格（ITS）の取得を目指せます。",
+    tag: "中級 ／ ITS対応",
+    tagColor: "bg-red-50 text-[#ff5859]",
+    accent: "border-[#ff5859]",
+    icon: "💻",
+  },
+  {
+    stage: "STAGE 4",
+    name: "Web ／ DB ／ AI",
+    sub: "AIを作る側へ",
+    desc: "Webアプリ開発からデータベース設計、古典的なアルゴリズムの実装、そして自分でAIを組み込んだプログラムの開発まで挑戦します。",
+    tag: "上級",
+    tagColor: "bg-purple-50 text-purple-600",
+    accent: "border-purple-400",
+    icon: "🤖",
+  },
+];
+---
+
+<section id="courses" class="py-24 px-6 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <p class="text-[#00c4b3] font-bold text-sm text-center mb-3 tracking-widest uppercase">
+      コースの流れ
+    </p>
+
+    <h2 class="text-3xl sm:text-4xl font-black text-center text-gray-900 mb-4">
+      ゲームから始めて、<span class="text-[#00c4b3]">AIクリエイター</span>へ
+    </h2>
+    <p class="text-center text-gray-500 mb-16">
+      マインクラフトから始まり、段階的にスキルアップ。お子さまのペースで進められます。
+    </p>
+
+    <div class="space-y-6">
+      {
+        stages.map((s, i) => (
+          <div class={`flex gap-6 bg-white border-l-4 ${s.accent} rounded-2xl shadow-sm p-6 sm:p-8`}>
+            <!-- 番号 & アイコン -->
+            <div class="flex flex-col items-center gap-2 shrink-0">
+              <span class="text-3xl">{s.icon}</span>
+              {i < stages.length - 1 && (
+                <div class="w-0.5 h-8 bg-gray-200 mt-1" />
+              )}
+            </div>
+
+            <!-- コンテンツ -->
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 mb-2">
+                <span class="text-xs font-bold text-gray-400 tracking-widest uppercase">{s.stage}</span>
+                <span class={`text-xs font-bold px-3 py-1 rounded-full ${s.tagColor}`}>{s.tag}</span>
+              </div>
+              <h3 class="text-xl font-black text-gray-900 mb-1">{s.name}</h3>
+              <p class="text-sm font-bold text-gray-500 mb-3">「{s.sub}」</p>
+              <p class="text-gray-600 leading-relaxed">{s.desc}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

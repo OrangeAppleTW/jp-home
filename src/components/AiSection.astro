@@ -1,0 +1,60 @@
+---
+const features = [
+  {
+    icon: "🔍",
+    title: "AIを使う",
+    desc: "AIを活用して、自分のアイデアを素早く形にする力",
+    color: "text-[#00c4b3]",
+    bg: "bg-[#e6faf9]",
+  },
+  {
+    icon: "🤝",
+    title: "AIと協働する",
+    desc: "AIをパートナーとして、より大きな作品を作る力",
+    color: "text-[#ffa300]",
+    bg: "bg-orange-50",
+  },
+  {
+    icon: "⚡",
+    title: "AIを創る",
+    desc: "AIのしくみを理解し、自分でAIを設計・実装する力",
+    color: "text-[#ff5859]",
+    bg: "bg-red-50",
+  },
+];
+---
+
+<section id="ai" class="py-24 px-6 bg-gray-50">
+  <div class="max-w-5xl mx-auto">
+    <!-- ラベル -->
+    <p class="text-[#00c4b3] font-bold text-sm text-center mb-3 tracking-widest uppercase">
+      AIで学ぶ
+    </p>
+
+    <h2 class="text-3xl sm:text-4xl font-black text-center text-gray-900 mb-6">
+      私たちの授業には、<br />
+      <span class="text-[#00c4b3]">AIの先生</span>がいます。
+    </h2>
+
+    <p class="text-center text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto mb-16">
+      OrangeAppleでは、子どもたちがAIと対話しながら学びます。<br />
+      AIに質問する、AIと一緒に作る、AIを自分でプログラムする——<br />
+      この3つの体験を通じて、これからの時代に最も必要な力を育てます。
+    </p>
+
+    <!-- 3カラム -->
+    <div class="grid sm:grid-cols-3 gap-6">
+      {
+        features.map((f) => (
+          <div class="bg-white rounded-2xl p-8 shadow-sm text-center">
+            <div class={`${f.bg} w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-5`}>
+              {f.icon}
+            </div>
+            <h3 class={`text-xl font-black mb-3 ${f.color}`}>{f.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{f.desc}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

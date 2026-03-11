@@ -1,0 +1,50 @@
+---
+const reasons = [
+  {
+    num: "01",
+    icon: "🎮",
+    title: "ゲームから始めるから、飽きない",
+    desc: "マインクラフトから始まるカリキュラムで、プログラミングへの「楽しい」という入口を作ります。好奇心が学習の原動力になります。",
+    color: "text-[#00c4b3]",
+  },
+  {
+    num: "02",
+    icon: "🤖",
+    title: "AIを軸にした、未来型カリキュラム",
+    desc: "AIを使うだけでなく、AIと協働し、最終的にはAIを自分で作る——一貫したAI教育の流れが、次世代に必要な力を育てます。",
+    color: "text-[#ffa300]",
+  },
+  {
+    num: "03",
+    icon: "🌍",
+    title: "シリコンバレー発の、革新的な教育メソッド",
+    desc: "世界の最先端を走るシリコンバレーの教育思想をベースに、「作って、壊して、また作る」創造的な学びのサイクルを実践します。",
+    color: "text-[#ff5859]",
+  },
+];
+---
+
+<section class="py-24 px-6 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <p class="text-[#00c4b3] font-bold text-sm text-center mb-3 tracking-widest uppercase">
+      選ばれる理由
+    </p>
+
+    <h2 class="text-3xl sm:text-4xl font-black text-center text-gray-900 mb-16">
+      OrangeAppleが<span class="text-[#00c4b3]">選ばれる</span>3つの理由
+    </h2>
+
+    <div class="grid sm:grid-cols-3 gap-8">
+      {
+        reasons.map((r) => (
+          <div class="text-center">
+            <p class="text-6xl font-black text-gray-100 mb-2">{r.num}</p>
+            <div class="text-4xl mb-4">{r.icon}</div>
+            <h3 class={`text-lg font-black mb-3 ${r.color}`}>{r.title}</h3>
+            <p class="text-gray-600 leading-relaxed text-sm">{r.desc}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

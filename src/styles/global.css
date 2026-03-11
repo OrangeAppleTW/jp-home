@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+/* 品牌色定義 */
+@theme {
+  --color-brand-green: #00c4b3;
+  --color-brand-orange: #ffa300;
+  --color-brand-red: #ff5859;
+  --color-brand-green-dark: #00a89a;
+  --color-brand-green-light: #e6faf9;
+}
