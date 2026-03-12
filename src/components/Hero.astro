@@ -1,7 +1,106 @@
 ---
 ---
 
-<section class="pt-32 pb-20 px-6 bg-white">
+<section class="relative pt-32 pb-20 px-6 bg-white overflow-hidden">
+
+  <!-- ===================== 浮遊装飾要素 ===================== -->
+  <!-- 外層 .parallax-wrap → GSAP がマウス＋スクロール視差を担当 -->
+  <!-- 内層要素           → CSS が独立してフワフワ浮動アニメーション -->
+
+  <!-- ── 左側 ── -->
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 8%; left: 2%;" data-depth="0.25">
+    <span class="float-a font-mono font-black text-[#00c4b3] opacity-20" style="font-size: 2.2rem;">{"{ }"}</span>
+  </div>
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 27%; left: 5%;" data-depth="0.6">
+    <span class="float-b font-mono font-black text-[#ffa300] opacity-20" style="font-size: 1.2rem;">if()</span>
+  </div>
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 55%; left: 0%;" data-depth="0.15">
+    <div class="float-c rounded-full bg-[#ff5859] opacity-8" style="width: 80px; height: 80px;"></div>
+  </div>
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 70%; left: 7%;" data-depth="0.55">
+    <span class="float-a font-mono font-black text-[#9333ea] opacity-20" style="font-size: 0.85rem;">for</span>
+  </div>
+  <!-- ピクセルブロック（Minecraft 風）45°回転 -->
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 20%; left: 12%;" data-depth="0.4">
+    <div class="float-b bg-[#00c4b3] opacity-20" style="width: 22px; height: 22px; transform: rotate(20deg);"></div>
+  </div>
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 84%; left: 3%;" data-depth="0.75">
+    <span class="float-c font-mono font-black text-gray-400 opacity-30" style="font-size: 0.8rem;">def</span>
+  </div>
+  <!-- ひし形 大 -->
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 42%; left: 14%;" data-depth="0.35">
+    <div class="float-a bg-[#ffa300] opacity-15" style="width: 20px; height: 20px; transform: rotate(45deg);"></div>
+  </div>
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 62%; left: 9%;" data-depth="0.65">
+    <span class="float-b font-mono font-black text-[#ff5859] opacity-20" style="font-size: 1rem;">print()</span>
+  </div>
+  <!-- 大きな円 -->
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 35%; left: -1%;" data-depth="0.2">
+    <div class="float-c rounded-full bg-[#9333ea] opacity-[0.06]" style="width: 60px; height: 60px;"></div>
+  </div>
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 91%; left: 10%;" data-depth="0.8">
+    <span class="float-a font-mono font-black text-gray-300 opacity-40" style="font-size: 0.75rem;">while</span>
+  </div>
+  <!-- 細長い長方形 -->
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 14%; left: 7%;" data-depth="0.5">
+    <div class="float-b bg-[#00c4b3] opacity-10" style="width: 6px; height: 36px; transform: rotate(-15deg);"></div>
+  </div>
+  <!-- 小ドット群 -->
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 48%; left: 16%;" data-depth="0.45">
+    <div class="float-c" style="display: grid; grid-template-columns: repeat(3,6px); gap: 5px;">
+      {Array.from({length: 9}).map(() => (
+        <div class="rounded-full bg-[#ffa300] opacity-20" style="width: 6px; height: 6px;"></div>
+      ))}
+    </div>
+  </div>
+
+  <!-- ── 右側 ── -->
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 14%; right: 3%;" data-depth="0.4">
+    <span class="float-b font-mono font-black text-[#ff5859] opacity-20" style="font-size: 1.8rem;">{"</>"}</span>
+  </div>
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 36%; right: 6%;" data-depth="0.65">
+    <span class="float-a font-mono font-black text-[#00c4b3] opacity-20" style="font-size: 1.4rem;">=></span>
+  </div>
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 60%; right: 0%;" data-depth="0.15">
+    <div class="float-c rounded-full bg-[#9333ea] opacity-[0.07]" style="width: 70px; height: 70px;"></div>
+  </div>
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 75%; right: 8%;" data-depth="0.55">
+    <span class="float-b font-mono font-black text-[#ffa300] opacity-20" style="font-size: 1rem;">const</span>
+  </div>
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 26%; right: 12%;" data-depth="0.75">
+    <span class="float-c font-mono font-black text-[#00c4b3] opacity-25" style="font-size: 0.85rem;">#AI</span>
+  </div>
+  <!-- ひし形 -->
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 47%; right: 14%;" data-depth="0.4">
+    <div class="float-a bg-[#ff5859] opacity-15" style="width: 18px; height: 18px; transform: rotate(45deg);"></div>
+  </div>
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 86%; right: 5%;" data-depth="0.3">
+    <div class="float-b rounded-full bg-[#ffa300] opacity-15" style="width: 26px; height: 26px;"></div>
+  </div>
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 55%; right: 16%;" data-depth="0.6">
+    <span class="float-c font-mono font-black text-[#9333ea] opacity-20" style="font-size: 0.9rem;">true</span>
+  </div>
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 9%; right: 15%;" data-depth="0.35">
+    <span class="float-a font-mono font-black text-[#9333ea] opacity-15" style="font-size: 1.5rem;">{"[ ]"}</span>
+  </div>
+  <!-- ピクセルブロック 回転あり -->
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 42%; right: 1%;" data-depth="0.2">
+    <div class="float-b bg-[#00c4b3] opacity-[0.08]" style="width: 40px; height: 40px; transform: rotate(12deg);"></div>
+  </div>
+  <!-- 細長い長方形 -->
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 20%; right: 8%;" data-depth="0.5">
+    <div class="float-c bg-[#ff5859] opacity-10" style="width: 6px; height: 44px; transform: rotate(20deg);"></div>
+  </div>
+  <!-- 小ドット群 -->
+  <div class="parallax-wrap absolute select-none pointer-events-none" style="top: 67%; right: 16%;" data-depth="0.45">
+    <div class="float-a" style="display: grid; grid-template-columns: repeat(3,6px); gap: 5px;">
+      {Array.from({length: 9}).map(() => (
+        <div class="rounded-full bg-[#9333ea] opacity-20" style="width: 6px; height: 6px;"></div>
+      ))}
+    </div>
+  </div>
+
+  <!-- ===================== メインコンテンツ ===================== -->
   <div class="max-w-4xl mx-auto text-center">
     <!-- バッジ -->
     <div class="inline-flex items-center gap-2 bg-[#e6faf9] text-[#00c4b3] text-sm font-bold px-4 py-2 rounded-full mb-8">
@@ -52,3 +151,52 @@
     </div>
   </div>
 </section>
+
+<style>
+  /* 内層要素の CSS float アニメーション（GSAP transform と干渉しないよう分離） */
+  .float-a { animation: floatA 6s ease-in-out infinite; display: inline-block; }
+  .float-b { animation: floatB 7.5s ease-in-out infinite; display: inline-block; }
+  .float-c { animation: floatA 5s ease-in-out infinite 1.8s; display: inline-block; }
+
+  @keyframes floatA {
+    0%, 100% { transform: translateY(0px) rotate(var(--r, 0deg)); }
+    50%       { transform: translateY(-12px) rotate(var(--r, 0deg)); }
+  }
+  @keyframes floatB {
+    0%, 100% { transform: translateY(0px) rotate(var(--r, 0deg)); }
+    50%       { transform: translateY(10px) rotate(var(--r, 0deg)); }
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+
+  const wraps = document.querySelectorAll<HTMLElement>(".parallax-wrap");
+
+  let mouseX = 0;
+  let mouseY = 0;
+
+  // マウス位置を記録
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX - window.innerWidth / 2;
+    mouseY = e.clientY - window.innerHeight / 2;
+    update();
+  });
+
+  // スクロールでも視差を更新
+  window.addEventListener("scroll", update);
+
+  function update() {
+    const sy = window.scrollY;
+    wraps.forEach((wrap) => {
+      const depth = parseFloat(wrap.dataset.depth ?? "0.3");
+      gsap.to(wrap, {
+        // マウス視差（水平・垂直）＋ スクロール視差（要素が遅れて流れる）
+        x: mouseX * depth * 0.04,
+        y: mouseY * depth * 0.04 + sy * depth * 0.25,
+        duration: 0.8,
+        ease: "power2.out",
+      });
+    });
+  }
+</script>
