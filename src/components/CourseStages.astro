@@ -3,138 +3,249 @@ const stages = [
   {
     stage: "STAGE 1",
     name: "Minecraft & Roblox",
-    tagline: "在遊戲中學習編程",
     taglineJa: "ゲームの世界で、コードを体験する",
     tag: "入門",
-    tagColor: "bg-[#e6faf9] text-[#00c4b3]",
-    borderColor: "border-[#00c4b3]",
-    numColor: "text-[#00c4b3]",
-    bgAccent: "bg-[#e6faf9]",
-    icon: "⛏️",
+    color: "#00c4b3",
+    bgColor: "#e6faf9",
     courses: [
       {
         title: "Minecraft Coding",
         subtitle: "Virtual Logic × Redstone Circuits",
-        desc: "子どもたちが大好きな3Dの世界でグラフィカルコマンドを使いながら、ロジック・計算思考・レッドストーン回路を学びます。能動的な学習への情熱を引き出します。",
+        desc: "子どもたちが大好きな3Dの世界でグラフィカルコマンドを使いながら、ロジック・計算思考・レッドストーン回路を学びます。",
+        img: "/images/course-minecraft.png",
       },
       {
         title: "Roblox AI Game Design",
         subtitle: "Game Dev × Generative AI",
-        desc: "GenAIツールを活用しながら、Luaスクリプトの概念を学習。3Dパルクールレベルや消えるトラップをデザインし、マルチプレイヤーゲームを公開するところまで挑戦します。",
+        desc: "GenAIツールを活用しながらLuaスクリプトの概念を学習。3Dパルクールレベルをデザインし、マルチプレイヤーゲームを公開するところまで挑戦します。",
+        img: "/images/course-roblox.png",
       },
     ],
   },
   {
     stage: "STAGE 2",
     name: "Scratch",
-    tagline: "用簡單/直覺的視覺化介面開發遊戲",
     taglineJa: "直感的なビジュアルインターフェースで、ゲームを作る",
     tag: "初級",
-    tagColor: "bg-orange-50 text-[#ffa300]",
-    borderColor: "border-[#ffa300]",
-    numColor: "text-[#ffa300]",
-    bgAccent: "bg-orange-50",
-    icon: "🎮",
+    color: "#ffa300",
+    bgColor: "#fff7ed",
     courses: [
       {
-        title: "Scratch プログラミング",
-        subtitle: "ビジュアルブロック × ゲーム制作",
-        desc: "コードを書かなくてもブロックを組み合わせるだけでゲームが作れます。「動かす」から「創る」へ——自分だけのゲームを完成させる達成感が、次の学習への原動力になります。",
+        title: "Scratchプログラミング（エディタ）",
+        subtitle: "ビジュアルブロック × ロジック設計",
+        desc: "ブロックを組み合わせるだけでプログラムが作れます。Motion・Events・Controlブロックを使いながら、コードの考え方を直感的に習得します。",
+        img: "/images/course-scratch-editor.png",
+      },
+      {
+        title: "Scratchプログラミング（ゲーム制作）",
+        subtitle: "キャラクター設計 × ゲーム完成",
+        desc: "「動かす」から「創る」へ——自分だけのゲームを完成させる達成感が、次の学習への原動力になります。",
+        img: "/images/course-scratch-game.png",
       },
     ],
   },
   {
     stage: "STAGE 3",
     name: "Python & JavaScript",
-    tagline: "用真正的程式語言開發遊戲",
     taglineJa: "本物のプログラミング言語で、ゲームを開発する",
     tag: "中級 ／ ITS対応",
-    tagColor: "bg-red-50 text-[#ff5859]",
-    borderColor: "border-[#ff5859]",
-    numColor: "text-[#ff5859]",
-    bgAccent: "bg-red-50",
-    icon: "💻",
+    color: "#ff5859",
+    bgColor: "#fff1f2",
     courses: [
       {
-        title: "Python / JavaScript",
-        subtitle: "テキストコード × ゲーム・アプリ開発",
-        desc: "世界中のエンジニアが使う本格的な言語でゲーム開発に挑戦。テキストコードへの移行後も「ゲームを作る」というテーマを保ちながら、実践的なスキルを習得します。この段階でMicrosoft認定の国際資格（ITS）の受験が可能です。",
+        title: "Python × ゲーム開発",
+        subtitle: "Pygame × アクションゲーム",
+        desc: "世界中のエンジニアが使うPythonでゲーム開発に挑戦。Pygameを使って2Dアクションゲームを完成させます。",
+        img: "/images/course-python-game.png",
+      },
+      {
+        title: "JavaScript × ブラウザゲーム",
+        subtitle: "Canvas API × インタラクティブゲーム",
+        desc: "ブラウザで動くゲームをJavaScriptで開発。この段階でMicrosoft認定の国際資格（ITS）の受験が可能です。",
+        img: "/images/course-js-game.png",
       },
     ],
   },
   {
     stage: "STAGE 4",
     name: "Web / DB / AI",
-    tagline: "AIを作る側へ",
     taglineJa: "AIを創るエンジニアへ",
     tag: "上級",
-    tagColor: "bg-purple-50 text-purple-600",
-    borderColor: "border-purple-400",
-    numColor: "text-purple-500",
-    bgAccent: "bg-purple-50",
-    icon: "🤖",
+    color: "#9333ea",
+    bgColor: "#faf5ff",
     courses: [
       {
-        title: "Web / Database / AI",
-        subtitle: "アルゴリズム × AIプログラミング",
-        desc: "HTML・CSS・データベースを組み合わせたWebアプリ開発から、古典的なアルゴリズムの実装、そして自分でAIを組み込んだプログラムの開発まで。使う側から、創る側へ。",
+        title: "アルゴリズム × データ構造",
+        subtitle: "ソート・グラフ・探索アルゴリズム",
+        desc: "古典的なアルゴリズムを視覚的に理解し実装。データ構造の基礎からグラフ探索まで体系的に学びます。",
+        img: "/images/course-algorithm.png",
+      },
+      {
+        title: "Web / Database / AI開発",
+        subtitle: "Webアプリ × AIプログラミング",
+        desc: "HTML・CSS・データベースを組み合わせたWebアプリ開発から、自分でAIを組み込んだプログラムの開発まで。使う側から、創る側へ。",
+        img: "/images/course-ai-web.png",
       },
     ],
   },
 ];
 ---
 
-<section id="courses" class="py-24 px-6 bg-white">
-  <div class="max-w-5xl mx-auto">
-    <p class="text-[#00c4b3] font-bold text-sm text-center mb-3 tracking-widest uppercase">
+<section id="courses" class="bg-white">
+  <!-- セクションヘッダー -->
+  <div class="py-24 px-6 text-center">
+    <p class="text-[#00c4b3] font-bold text-sm tracking-widest uppercase mb-3">
       コースの流れ
     </p>
-    <h2 class="text-3xl sm:text-4xl font-black text-center text-gray-900 mb-4">
+    <h2 class="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
       ゲームから始めて、<span class="text-[#00c4b3]">AIクリエイター</span>へ
     </h2>
-    <p class="text-center text-gray-500 mb-16">
+    <p class="text-gray-500 max-w-xl mx-auto">
       マインクラフトから始まり、段階的にスキルアップ。お子さまのペースで進められます。
     </p>
+  </div>
 
-    <div class="space-y-8">
-      {stages.map((s) => (
-        <div class={`rounded-3xl border-2 ${s.borderColor} overflow-hidden`}>
-          <!-- ステージヘッダー -->
-          <div class={`${s.bgAccent} px-8 py-5 flex flex-wrap items-center gap-4`}>
-            <span class="text-3xl">{s.icon}</span>
-            <div class="flex-1">
-              <div class="flex flex-wrap items-center gap-3 mb-1">
-                <span class={`text-xs font-black tracking-widest uppercase ${s.numColor}`}>{s.stage}</span>
-                <span class={`text-xs font-bold px-3 py-1 rounded-full bg-white/70 ${s.numColor}`}>{s.tag}</span>
-              </div>
-              <h3 class="text-2xl font-black text-gray-900">{s.name}</h3>
-              <p class={`text-sm font-bold ${s.numColor}`}>{s.taglineJa}</p>
-            </div>
-          </div>
+  <!-- 各 Stage：1 Stage = 1 フルワイドブロック、ピン固定でコースを切り替え -->
+  {stages.map((s, si) => (
+    <div
+      class="stage-block w-full min-h-screen flex flex-col md:flex-row overflow-hidden"
+      data-stage={si}
+      style={`background-color: ${s.bgColor}`}
+    >
+      <!-- 左：テキスト -->
+      <div class="stage-text w-full md:w-1/2 flex flex-col justify-center px-10 py-16 md:py-24">
+        <!-- Stage ヘッダー（固定） -->
+        <div class="mb-10">
+          <p class="text-xs font-black tracking-widest uppercase mb-1" style={`color: ${s.color}`}>
+            {s.stage} · {s.tag}
+          </p>
+          <h3 class="text-3xl sm:text-4xl font-black text-gray-900 mb-2">{s.name}</h3>
+          <p class="text-sm font-bold" style={`color: ${s.color}`}>{s.taglineJa}</p>
+        </div>
 
-          <!-- コンテンツ本体 -->
-          <div class="p-8">
-            <div class={`grid gap-6 ${s.courses.length > 1 ? "md:grid-cols-2" : "md:grid-cols-2"}`}>
-              <!-- コース説明 -->
-              <div class={`space-y-5 ${s.courses.length === 1 ? "md:col-span-1" : ""}`}>
-                {s.courses.map((c) => (
-                  <div>
-                    <p class="font-black text-gray-900 mb-0.5">{c.title}</p>
-                    <p class={`text-xs font-bold mb-2 ${s.numColor}`}>{c.subtitle}</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">{c.desc}</p>
-                  </div>
+        <!-- コース詳細（スクロールで切り替え） -->
+        <div class="relative" style="min-height: 160px;">
+          {s.courses.map((c, ci) => (
+            <div
+              class={`course-detail absolute inset-0 ${ci === 0 ? "opacity-100" : "opacity-0"}`}
+              data-course={ci}
+            >
+              <!-- ドットナビ -->
+              <div class="flex gap-2 mb-4">
+                {s.courses.map((_, di) => (
+                  <span
+                    class="dot w-2 h-2 rounded-full transition-colors"
+                    style={di === ci ? `background-color: ${s.color}` : "background-color: #d1d5db"}
+                  />
                 ))}
               </div>
-
-              <!-- 画像プレースホルダー -->
-              <div class={`${s.bgAccent} rounded-2xl flex flex-col items-center justify-center gap-3 min-h-[180px] ${s.courses.length === 1 ? "md:col-span-1" : "md:col-span-1 md:row-span-1"}`}>
-                <span class="text-5xl opacity-30">{s.icon}</span>
-                <p class="text-xs text-gray-400 font-bold">画像を追加予定</p>
-              </div>
+              <p class="text-lg font-black text-gray-900 mb-1">{c.title}</p>
+              <p class="text-sm font-bold mb-4" style={`color: ${s.color}`}>{c.subtitle}</p>
+              <p class="text-gray-600 leading-relaxed">{c.desc}</p>
             </div>
-          </div>
+          ))}
         </div>
-      ))}
+
+        <!-- 装飾：大きなステージ番号 -->
+        <p class="mt-16 text-[10rem] font-black leading-none select-none pointer-events-none opacity-[0.04] text-gray-900">
+          {si + 1}
+        </p>
+      </div>
+
+      <!-- 右：画像（スクロールで切り替え） -->
+      <div class="relative w-full md:w-1/2 min-h-[50vh] md:min-h-screen overflow-hidden">
+        {s.courses.map((c, ci) => (
+          <!-- 視差のため画像を縦に120%にし、上下に余白を確保する -->
+          <img
+            src={c.img}
+            alt={c.title}
+            class={`course-img absolute left-0 w-full object-cover ${ci === 0 ? "opacity-100" : "opacity-0"}`}
+            style="height: 120%; top: -10%;"
+            data-course={ci}
+          />
+        ))}
+      </div>
     </div>
-  </div>
+  ))}
 </section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.querySelectorAll<HTMLElement>(".stage-block").forEach((block) => {
+    const details = block.querySelectorAll<HTMLElement>(".course-detail");
+    const imgs = block.querySelectorAll<HTMLElement>(".course-img");
+    const courseCount = details.length;
+
+    if (courseCount < 2) return;
+
+    let currentIdx = 0;
+
+    ScrollTrigger.create({
+      trigger: block,
+      start: "top top",
+      end: `+=${(courseCount - 1) * window.innerHeight}`,
+      pin: true,
+      onUpdate(self) {
+        const idx = Math.min(Math.floor(self.progress * courseCount), courseCount - 1);
+
+        // 視差：progress に応じて全画像を y 移動（-30px〜+30px）
+        // 符号を反転：下スクロール時に画像が上に動く
+        const parallaxY = (0.5 - self.progress) * 60;
+        imgs.forEach((img) => gsap.set(img, { y: parallaxY }));
+
+        // コースが変わった時だけ切り替えアニメーション（テキストと画像を同時に）
+        if (idx === currentIdx) return;
+        currentIdx = idx;
+
+        details.forEach((d, i) => {
+          gsap.to(d, {
+            opacity: i === idx ? 1 : 0,
+            y: i === idx ? 0 : 20,
+            duration: 0.5,
+            ease: "power2.out",
+            overwrite: true,
+          });
+        });
+
+        imgs.forEach((img, i) => {
+          gsap.to(img, {
+            opacity: i === idx ? 1 : 0,
+            duration: 0.5,
+            ease: "power2.out",
+            overwrite: true,
+          });
+        });
+      },
+    });
+  });
+
+  // ステージ登場アニメーション
+  document.querySelectorAll<HTMLElement>(".stage-block").forEach((block) => {
+    gsap.from(block.querySelector(".stage-text"), {
+      x: -60,
+      opacity: 0,
+      duration: 0.9,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: block,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+    gsap.from(block.querySelector(".relative.w-full.md\\:w-1\\/2"), {
+      x: 60,
+      opacity: 0,
+      duration: 0.9,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: block,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+  });
+</script>
