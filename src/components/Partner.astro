@@ -1,0 +1,44 @@
+---
+/* Google フォームの URL は公開前に差し替えてください */
+const FORM_URL = "https://forms.gle/XXXXXXXXXXXXXXXXX";
+---
+
+<section id="partner" class="py-24 px-6 bg-[#00c4b3]">
+  <div class="max-w-2xl mx-auto text-center">
+    <p class="text-white/70 font-bold text-sm tracking-widest uppercase mb-3">JOIN US</p>
+    <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
+      一緒に、AI教育を広めませんか？
+    </h2>
+    <p class="text-white/80 text-lg mb-12 leading-relaxed">
+      OrangeAppleは現在、日本全国での展開に向けて<br class="hidden sm:block" />
+      教室パートナー・講師を募集しています。
+    </p>
+
+    <!-- 募集種別カード -->
+    <div class="grid sm:grid-cols-2 gap-4 mb-12 text-left">
+      <div class="bg-white/15 rounded-2xl p-6">
+        <p class="text-white font-black text-lg mb-2">🏫 教室パートナー</p>
+        <p class="text-white/80 text-sm leading-relaxed">
+          教室スペースをお持ちの方、または地域でプログラミング教育を展開したい法人・個人の方を募集しています。
+        </p>
+      </div>
+      <div class="bg-white/15 rounded-2xl p-6">
+        <p class="text-white font-black text-lg mb-2">👩‍🏫 講師</p>
+        <p class="text-white/80 text-sm leading-relaxed">
+          プログラミングや教育に情熱を持つ講師を募集しています。未経験の方も、OrangeAppleが研修でサポートします。
+        </p>
+      </div>
+    </div>
+
+    <!-- 応募ボタン -->
+    <a
+      href={FORM_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-block bg-white hover:bg-gray-50 text-[#00c4b3] font-black text-lg px-10 py-4 rounded-full transition-colors shadow-xl"
+    >
+      応募フォームへ進む →
+    </a>
+    <p class="text-white/50 text-xs mt-4">Google フォームが開きます</p>
+  </div>
+</section>
