@@ -3,8 +3,126 @@
 const FORM_URL = "https://rebrand.ly/jp-partner";
 ---
 
-<section id="partner" class="py-24 px-6 bg-[#00c4b3]">
-  <div class="max-w-2xl mx-auto text-center">
+<section id="partner" class="relative overflow-hidden py-24 px-6 bg-[#00c4b3]">
+  <!-- ===== 左側装飾（lg以上・上から下まで散布） ===== -->
+
+  <!-- 最上段 -->
+  <svg class="pointer-events-none hidden lg:block absolute left-4 top-6 opacity-25 rotate-[-28deg]" aria-hidden="true" width="62" height="62" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 8L3 12L7 16"/><path d="M17 8L21 12L17 16"/><line x1="14" y1="4" x2="10" y2="20"/>
+  </svg>
+  <svg class="pointer-events-none hidden lg:block absolute left-44 top-4 opacity-35 rotate-[18deg]" aria-hidden="true" width="40" height="26" viewBox="0 0 80 40">
+    <text x="40" y="20" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-weight="700" font-size="34" fill="white" stroke="white" stroke-width="1.5" paint-order="stroke">{}</text>
+  </svg>
+
+  <!-- 上段 (12–24%) -->
+  <svg class="pointer-events-none hidden lg:block absolute left-24 top-[12%] opacity-20 rotate-[-8deg]" aria-hidden="true" width="56" height="36" viewBox="0 0 80 40">
+    <text x="40" y="20" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-weight="700" font-size="34" fill="white" stroke="white" stroke-width="1.5" paint-order="stroke">!=</text>
+  </svg>
+  <svg class="pointer-events-none hidden lg:block absolute left-50 top-[20%] opacity-30 rotate-[32deg]" aria-hidden="true" width="40" height="26" viewBox="0 0 80 40">
+    <text x="40" y="20" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-weight="700" font-size="34" fill="white" stroke="white" stroke-width="1.5" paint-order="stroke">//</text>
+  </svg>
+  <svg class="pointer-events-none hidden lg:block absolute left-10 top-[24%] opacity-20 rotate-[10deg]" aria-hidden="true" width="52" height="34" viewBox="0 0 80 40">
+    <text x="40" y="20" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-weight="700" font-size="34" fill="white" stroke="white" stroke-width="1.5" paint-order="stroke">let</text>
+  </svg>
+
+  <!-- 中上段 (32–44%) -->
+  <svg class="pointer-events-none hidden lg:block absolute left-12 top-[34%] opacity-20 rotate-[-14deg]" aria-hidden="true" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+    <line x1="9" y1="3" x2="7" y2="21"/><line x1="15" y1="3" x2="13" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/>
+  </svg>
+  <svg class="pointer-events-none hidden lg:block absolute left-46 top-[40%] opacity-25 rotate-[-22deg]" aria-hidden="true" width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+    <circle cx="12" cy="7" r="2" fill="white" stroke="none"/><circle cx="12" cy="14" r="2" fill="white" stroke="none"/><path d="M12 16v3l-2.5 3"/>
+  </svg>
+
+  <!-- 中段 (48–58%) -->
+  <svg class="pointer-events-none hidden lg:block absolute left-2 top-[50%] opacity-20 rotate-[42deg]" aria-hidden="true" width="62" height="62" viewBox="0 0 28 28" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="2" y1="10" x2="14" y2="10"/><line x1="2" y1="16" x2="14" y2="16"/><polyline points="15,6 24,13 15,20"/>
+  </svg>
+  <svg class="pointer-events-none hidden lg:block absolute left-44 top-[54%] opacity-20 rotate-[-35deg]" aria-hidden="true" width="46" height="30" viewBox="0 0 80 40">
+    <text x="40" y="20" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-weight="700" font-size="34" fill="white" stroke="white" stroke-width="1.5" paint-order="stroke">01</text>
+  </svg>
+  <svg class="pointer-events-none hidden lg:block absolute left-20 top-[58%] opacity-20 rotate-[20deg]" aria-hidden="true" width="52" height="34" viewBox="0 0 80 40">
+    <text x="40" y="20" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-weight="700" font-size="34" fill="white" stroke="white" stroke-width="1.5" paint-order="stroke">if</text>
+  </svg>
+
+  <!-- 中下段 (66–78%) -->
+  <svg class="pointer-events-none hidden lg:block absolute left-8 top-[68%] opacity-20 rotate-[16deg]" aria-hidden="true" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+    <path d="M12 12c-2-2.5-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.5 6-4zm0 0c2 2.5 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.5-6 4z"/>
+  </svg>
+  <svg class="pointer-events-none hidden lg:block absolute left-46 top-[72%] opacity-25 rotate-[25deg]" aria-hidden="true" width="40" height="26" viewBox="0 0 80 40">
+    <text x="40" y="20" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-weight="700" font-size="34" fill="white" stroke="white" stroke-width="1.5" paint-order="stroke">++</text>
+  </svg>
+  <svg class="pointer-events-none hidden lg:block absolute left-22 top-[76%] opacity-20 rotate-[-30deg]" aria-hidden="true" width="46" height="30" viewBox="0 0 80 40">
+    <text x="40" y="20" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-weight="700" font-size="34" fill="white" stroke="white" stroke-width="1.5" paint-order="stroke">[]</text>
+  </svg>
+
+  <!-- 最下段 -->
+  <svg class="pointer-events-none hidden lg:block absolute left-6 bottom-6 opacity-25 rotate-[-20deg]" aria-hidden="true" width="52" height="34" viewBox="0 0 80 40">
+    <text x="40" y="20" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-weight="700" font-size="34" fill="white" stroke="white" stroke-width="1.5" paint-order="stroke">===</text>
+  </svg>
+  <svg class="pointer-events-none hidden lg:block absolute left-38 bottom-4 opacity-30 rotate-[-15deg]" aria-hidden="true" width="40" height="26" viewBox="0 0 80 40">
+    <text x="40" y="20" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-weight="700" font-size="34" fill="white" stroke="white" stroke-width="1.5" paint-order="stroke">fn</text>
+  </svg>
+
+  <!-- ===== 右側装飾（lg以上・上から下まで散布） ===== -->
+
+  <!-- 最上段 -->
+  <svg class="pointer-events-none hidden lg:block absolute right-4 top-6 opacity-20 rotate-[22deg]" aria-hidden="true" width="62" height="62" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 8L3 12L7 16"/><path d="M17 8L21 12L17 16"/><line x1="14" y1="4" x2="10" y2="20"/>
+  </svg>
+  <svg class="pointer-events-none hidden lg:block absolute right-46 top-4 opacity-25 rotate-[-24deg]" aria-hidden="true" width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+    <line x1="9" y1="3" x2="7" y2="21"/><line x1="15" y1="3" x2="13" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/>
+  </svg>
+
+  <!-- 上段 (12–24%) -->
+  <svg class="pointer-events-none hidden lg:block absolute right-36 top-[12%] opacity-20 rotate-[-18deg]" aria-hidden="true" width="56" height="36" viewBox="0 0 80 40">
+    <text x="40" y="20" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-weight="700" font-size="34" fill="white" stroke="white" stroke-width="1.5" paint-order="stroke">&amp;&amp;</text>
+  </svg>
+  <svg class="pointer-events-none hidden lg:block absolute right-8 top-[18%] opacity-20 rotate-[14deg]" aria-hidden="true" width="52" height="34" viewBox="0 0 80 40">
+    <text x="40" y="20" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-weight="700" font-size="34" fill="white" stroke="white" stroke-width="1.5" paint-order="stroke">for</text>
+  </svg>
+  <svg class="pointer-events-none hidden lg:block absolute right-50 top-[22%] opacity-30 rotate-[32deg]" aria-hidden="true" width="40" height="26" viewBox="0 0 80 40">
+    <text x="40" y="20" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-weight="700" font-size="34" fill="white" stroke="white" stroke-width="1.5" paint-order="stroke">//</text>
+  </svg>
+
+  <!-- 中上段 (30–42%) -->
+  <svg class="pointer-events-none hidden lg:block absolute right-30 top-[30%] opacity-30 rotate-[38deg]" aria-hidden="true" width="40" height="26" viewBox="0 0 80 40">
+    <text x="40" y="20" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-weight="700" font-size="34" fill="white" stroke="white" stroke-width="1.5" paint-order="stroke">()</text>
+  </svg>
+  <svg class="pointer-events-none hidden lg:block absolute right-14 top-[36%] opacity-25 rotate-[30deg]" aria-hidden="true" width="40" height="26" viewBox="0 0 80 40">
+    <text x="40" y="20" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-weight="700" font-size="34" fill="white" stroke="white" stroke-width="1.5" paint-order="stroke">fn</text>
+  </svg>
+  <svg class="pointer-events-none hidden lg:block absolute right-44 top-[42%] opacity-20 rotate-[-12deg]" aria-hidden="true" width="52" height="34" viewBox="0 0 80 40">
+    <text x="40" y="20" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-weight="700" font-size="34" fill="white" stroke="white" stroke-width="1.5" paint-order="stroke">===</text>
+  </svg>
+
+  <!-- 中段 (48–60%) -->
+  <svg class="pointer-events-none hidden lg:block absolute right-6 top-[48%] opacity-20 rotate-[-40deg]" aria-hidden="true" width="62" height="40" viewBox="0 0 80 40">
+    <text x="40" y="20" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-weight="700" font-size="34" fill="white" stroke="white" stroke-width="1.5" paint-order="stroke">{}</text>
+  </svg>
+  <svg class="pointer-events-none hidden lg:block absolute right-42 top-[56%] opacity-20 rotate-[-32deg]" aria-hidden="true" width="46" height="30" viewBox="0 0 80 40">
+    <text x="40" y="20" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-weight="700" font-size="34" fill="white" stroke="white" stroke-width="1.5" paint-order="stroke">01</text>
+  </svg>
+
+  <!-- 中下段 (64–76%) -->
+  <svg class="pointer-events-none hidden lg:block absolute right-36 top-[64%] opacity-20 rotate-[15deg]" aria-hidden="true" width="56" height="56" viewBox="0 0 28 28" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="2" y1="10" x2="14" y2="10"/><line x1="2" y1="16" x2="14" y2="16"/><polyline points="15,6 24,13 15,20"/>
+  </svg>
+  <svg class="pointer-events-none hidden lg:block absolute right-8 top-[70%] opacity-20 rotate-[28deg]" aria-hidden="true" width="52" height="34" viewBox="0 0 80 40">
+    <text x="40" y="20" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-weight="700" font-size="34" fill="white" stroke="white" stroke-width="1.5" paint-order="stroke">[]</text>
+  </svg>
+  <svg class="pointer-events-none hidden lg:block absolute right-48 top-[76%] opacity-20 rotate-[20deg]" aria-hidden="true" width="46" height="30" viewBox="0 0 80 40">
+    <text x="40" y="20" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-weight="700" font-size="34" fill="white" stroke="white" stroke-width="1.5" paint-order="stroke">int</text>
+  </svg>
+
+  <!-- 最下段 -->
+  <svg class="pointer-events-none hidden lg:block absolute right-8 bottom-6 opacity-25 rotate-[-16deg]" aria-hidden="true" width="62" height="62" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+    <path d="M12 12c-2-2.5-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.5 6-4zm0 0c2 2.5 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.5-6 4z"/>
+  </svg>
+  <svg class="pointer-events-none hidden lg:block absolute right-50 bottom-4 opacity-30 rotate-[10deg]" aria-hidden="true" width="40" height="26" viewBox="0 0 80 40">
+    <text x="40" y="20" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-weight="700" font-size="34" fill="white" stroke="white" stroke-width="1.5" paint-order="stroke">!=</text>
+  </svg>
+
+  <div class="relative max-w-2xl mx-auto text-center">
     <p class="text-white/70 font-bold text-sm tracking-widest uppercase mb-3">JOIN US</p>
     <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
       一緒に、AI教育を広めませんか？
