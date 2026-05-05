@@ -11,13 +11,19 @@ const stages = [
       {
         title: "Minecraft Coding",
         subtitle: "Virtual Logic × Redstone Circuits",
+        techName: "Minecraft",
+        techIntro: "Microsoftが提供する、ブロックで世界を自由に構築できる3Dゲーム。世界中の学校でプログラミング教育に活用されています。",
         desc: "子どもたちが大好きな3Dの世界でグラフィカルコマンドを使いながら、ロジック・計算思考・レッドストーン回路を学びます。",
+        skills: ["計算思考", "ループ・繰り返し", "条件分岐", "レッドストーン回路"],
         img: "/images/course-minecraft.png",
       },
       {
         title: "Roblox AI Game Design",
         subtitle: "Game Dev × Generative AI",
+        techName: "Roblox",
+        techIntro: "月間アクティブユーザー3億人超のゲームプラットフォーム。Luaというスクリプト言語でゲームを作り、世界に公開できます。",
         desc: "GenAIツールを活用しながらLuaスクリプトの概念を学習。3Dパルクールレベルをデザインし、マルチプレイヤーゲームを公開するところまで挑戦します。",
+        skills: ["Lua入門", "3Dゲームデザイン", "GenAIツール活用", "マルチプレイヤー設計"],
         img: "/images/course-roblox.png",
       },
     ],
@@ -33,13 +39,19 @@ const stages = [
       {
         title: "Scratchプログラミング（エディタ）",
         subtitle: "ビジュアルブロック × ロジック設計",
+        techName: "Scratch",
+        techIntro: "MITが開発した無料のビジュアルプログラミングツール。ブロックをつなぐだけでプログラムが作れ、初めてのコーディングに最適です。",
         desc: "ブロックを組み合わせるだけでプログラムが作れます。Motion・Events・Controlブロックを使いながら、コードの考え方を直感的に習得します。",
+        skills: ["イベント処理", "ループ・繰り返し", "条件分岐", "変数の概念"],
         img: "/images/course-scratch-editor.png",
       },
       {
         title: "Scratchプログラミング（ゲーム制作）",
         subtitle: "キャラクター設計 × ゲーム完成",
+        techName: "Scratch",
+        techIntro: "MITが開発した無料のビジュアルプログラミングツール。ブロックをつなぐだけでプログラムが作れ、初めてのコーディングに最適です。",
         desc: "「動かす」から「創る」へ——自分だけのゲームを完成させる達成感が、次の学習への原動力になります。",
+        skills: ["キャラクター設計", "当たり判定", "スコアシステム", "ゲーム完成"],
         img: "/images/course-scratch-game.png",
       },
     ],
@@ -55,13 +67,19 @@ const stages = [
       {
         title: "Python × ゲーム開発",
         subtitle: "Python × アクションゲーム",
+        techName: "Python",
+        techIntro: "AIや機械学習でも使われる、世界で最も人気のあるプログラミング言語。シンプルな文法で読みやすく、初心者にも扱いやすいのが特徴です。",
         desc: "世界中のエンジニアが使うPythonでゲーム開発に挑戦。ブラウザ上で動くオリジナルの2Dアクションゲームを完成させます。",
+        skills: ["変数・関数・クラス", "2Dゲーム制作", "オブジェクト指向入門"],
         img: "/images/course-python-game.png",
       },
       {
         title: "JavaScript × ブラウザゲーム",
         subtitle: "Canvas API × インタラクティブゲーム",
+        techName: "JavaScript",
+        techIntro: "すべてのWebブラウザで動く、Webの公式言語。世界中のWebサイトやアプリがJavaScriptで動いています。",
         desc: "ブラウザで動くゲームをJavaScriptで開発。この段階でMicrosoft認定の国際資格（ITS）の受験が可能です。",
+        skills: ["非同期処理入門", "ITS試験対応"],
         img: "/images/course-js-game.png",
       },
     ],
@@ -77,13 +95,19 @@ const stages = [
       {
         title: "Web / Database 開発",
         subtitle: "Webアプリ × データベース設計",
+        techName: "HTML・CSS・NoSQL",
+        techIntro: "HTML・CSS・NoSQLはWebエンジニアの基礎スキル。これらを組み合わせることで、実際にユーザーが使えるWebアプリを作れます。",
         desc: "HTML・CSS・データベースを組み合わせたWebアプリ開発を体系的に学びます。実際に動くアプリを完成させながら、エンジニアの基礎を固めます。",
+        skills: ["HTML・CSS", "NoSQL・データベース設計", "サーバーサイド入門", "Webアプリ完成"],
         img: "/images/course-ai-web.png",
       },
       {
         title: "アルゴリズム × AI開発",
         subtitle: "探索・ソート × AIプログラミング",
+        techName: "アルゴリズム・AI",
+        techIntro: "アルゴリズムはすべてのプログラムの土台。機械学習・AIの仕組みを理解するうえでも欠かせない知識です。",
         desc: "古典的なアルゴリズムを視覚的に理解し実装。さらに自分でAIを組み込んだプログラムの開発まで挑戦します。使う側から、創る側へ。",
+        skills: ["探索・ソートアルゴリズム", "機械学習の基礎", "AIプログラミング", "ITS上級試験対応"],
         img: "/images/course-algorithm.png",
       },
     ],
@@ -124,7 +148,7 @@ const stages = [
         </div>
 
         <!-- コース詳細（スクロールで切り替え） -->
-        <div class="relative" style="min-height: 160px;">
+        <div class="relative" style="min-height: 280px;">
           {s.courses.map((c, ci) => (
             <div
               class={`course-detail absolute inset-0 ${ci === 0 ? "opacity-100" : "opacity-0"}`}
@@ -140,8 +164,21 @@ const stages = [
                 ))}
               </div>
               <p class="text-lg font-black text-gray-900 mb-1">{c.title}</p>
-              <p class="text-sm font-bold mb-4" style={`color: ${s.color}`}>{c.subtitle}</p>
-              <p class="text-gray-600 leading-relaxed">{c.desc}</p>
+              <p class="text-sm font-bold mb-3" style={`color: ${s.color}`}>{c.subtitle}</p>
+              <p class="text-gray-600 leading-relaxed text-sm mb-3">{c.desc}</p>
+              <!-- 習得スキルタグ -->
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                {c.skills.map((skill) => (
+                  <span class="text-xs font-bold px-2 py-0.5 rounded-full" style={`background-color: ${s.bgColor}; color: ${s.color}; border: 1px solid ${s.color}40`}>
+                    {skill}
+                  </span>
+                ))}
+              </div>
+              <!-- 技術紹介（最後に配置） -->
+              <div class="bg-white/70 rounded-lg px-3 py-2 border-l-2" style={`border-color: ${s.color}`}>
+                <p class="text-xs font-bold mb-0.5" style={`color: ${s.color}`}>{c.techName} とは？</p>
+                <p class="text-xs text-gray-500 leading-relaxed">{c.techIntro}</p>
+              </div>
             </div>
           ))}
         </div>
