@@ -3,66 +3,91 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 
-// 学校情報
+// =========================================================
+// 合作校ごとに差し替えるデータ
+// body・features は HTML 文字列。<p><strong><blockquote><ul><li> が使用可能
+// =========================================================
 const school = {
+  // Hero
   name: "教えない英語® プログラミング教室",
   category: "おうちで英語×プログラミング",
   location: "オンライン（全国対応）",
   tags: ["体験レッスンあり", "英語対応", "小学生〜中学生", "マインクラフト"],
-  // バナー画像があればパスを指定（なければグラデーションにフォールバック）
-  bannerImage: "",
+  bannerImage: "/images/schools/oshienaieigo.png", // 画像パスを入れると表示、空ならグラデーション
+
+  // 教学理念（経営者の話）
+  philosophy: [
+    {
+      heading: "ゲームばかりしていて困る・・・から、ゲームで専門分野の習得へ",
+      body: `
+        <p>お子さんがゲームばかりしていて困る・・・そんなお悩みはありませんか？</p>
+        <p>なんとかやめさせて、勉強させよう。と思っても、うまくいかずにイライラしてしまいますよね。</p>
+        <p>それなら逆転の発想。</p>
+        <blockquote>ゲームをやめさせるのではなく、ゲームを積極的に使って、AI時代に必要な論理的思考、問題解決力、そして英語力まで身につけてしまいましょう！</blockquote>
+      `,
+      image: "",
+    },
+    {
+      heading: "そもそも、英語はただのツール",
+      body: `
+        <p>これからの時代を生きるお子様に必要なのは、英語力ではなく、英語をツールとして使って<strong>「何ができるか？」</strong>の中身です。</p>
+        <p>その「中身」の一つになりえるのが、ゲームから入り、プログラミングを基礎とした<strong>技術開発力</strong>。</p>
+      `,
+      image: "",
+    },
+    {
+      heading: "スーパー国際人の育成",
+      body: `
+        <p>私たちコミオ®・スクールでは、スーパー国際人の育成をしています。</p>
+        <p>スーパー国際人の定義は、</p>
+        <ul>
+          <li>① 高いコミュニケーション力（このごく一部が英語）</li>
+          <li>② 専門分野</li>
+          <li>③ 日本人としてのアイデンティティ</li>
+        </ul>
+        <p>英語だけできても、それを使って伝える「中身」がないと、せっかくの英語力が活かせず意味がないと考えています。</p>
+        <p>プログラミングを基礎とした技術開発力は、その「中身」、<strong>専門分野の育成</strong>なのです。</p>
+      `,
+      image: "",
+    },
+    {
+      heading: "専門分野は、好きなことから入るのが一番",
+      body: `
+        <p>好きだからこそ、夢中になれて、好奇心が広がって、自分から学ぶようになる。</p>
+        <blockquote>やらされるのではなく、自立して「自分から学ぶ」——これが、上達に最も大切なポイントです。</blockquote>
+      `,
+      image: "",
+    },
+    {
+      heading: "「教えないプログラミング」で身につく力",
+      body: `
+        <p>マインクラフトなど、お子さんたちが大好きなゲームから入ります。「ゲームばかりしていて困る・・・」状態から、そのゲームを使って専門分野を習得します。</p>
+        <p>プログラミングでAIを使いこなす＆AIを開発することができるようになるだけでなく、AI時代に最も大切な<strong>論理的思考</strong>と<strong>問題解決力</strong>も身につけることができます。</p>
+        <p>上位クラスでは、国際資格も取得可能。禁止してもいずれゲームをやっているなら、それを将来使える資格に切り替えませんか？</p>
+      `,
+      image: "",
+    },
+  ],
+
+  // 教室特色（HTML）
+  features: `
+    <ul>
+      <li>レッスンはすべて英語での受講も可能（プログラミングと英語を同時に習得）</li>
+      <li>オンラインで全国どこからでも受講できる</li>
+      <li>小学生〜中学生対象</li>
+    </ul>
+  `,
+
+  // CTA
+  cta: {
+    label: "体験レッスンを申し込む",
+    href: "https://www.reservestock.jp/inquiry/MDVkMTVmN2U2O",
+  },
 };
-
-// スーパー国際人の3つの定義
-const pillars = [
-  {
-    num: "01",
-    title: "高いコミュニケーション力",
-    desc: "そのごく一部が「英語」。本質は、伝え合う力です。",
-    color: "text-[#00c4b3]",
-  },
-  {
-    num: "02",
-    title: "専門分野",
-    desc: "英語で伝える「中身」。プログラミングが、その専門分野になります。",
-    color: "text-[#ffa300]",
-  },
-  {
-    num: "03",
-    title: "日本人としてのアイデンティティ",
-    desc: "世界で活躍するからこそ、自分のルーツを大切にする。",
-    color: "text-[#ff5859]",
-  },
-];
-
-// 教えないプログラミングで身につく力
-const skills = [
-  {
-    icon: "🧩",
-    title: "論理的思考",
-    desc: "ゲームの中で試行錯誤しながら、筋道を立てて考える力が自然と身につきます。",
-    color: "text-[#00c4b3]",
-    bg: "bg-[#e6faf9]",
-  },
-  {
-    icon: "🛠",
-    title: "問題解決力",
-    desc: "「うまくいかない」を「どうすれば解決できる？」に変える、AI時代の必須スキル。",
-    color: "text-[#ffa300]",
-    bg: "bg-orange-50",
-  },
-  {
-    icon: "🤖",
-    title: "AI開発力",
-    desc: "AIを使いこなすだけでなく、自分でAIを作れるようになります。",
-    color: "text-[#ff5859]",
-    bg: "bg-red-50",
-  },
-];
 ---
 
 <Layout
-  title="教えないプログラミング | OrangeApple プログラミングスクール"
+  title={`${school.name} | OrangeApple プログラミングスクール`}
   description="ゲームばかりしていて困る…そのゲームを使って、AI時代に必要な論理的思考・問題解決力・英語力を身につける「教えないプログラミング」"
 >
   <Header />
@@ -70,7 +95,6 @@ const skills = [
   <!-- ============ Hero（Tabelog風フルブリードバナー） ============ -->
   <section class="relative min-h-[70vh] flex flex-col justify-end overflow-hidden">
 
-    <!-- バナー背景：画像 or グラデーションフォールバック -->
     {school.bannerImage ? (
       <img
         src={school.bannerImage}
@@ -81,30 +105,21 @@ const skills = [
       <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-[#004d47]" />
     )}
 
-    <!-- ダークオーバーレイ -->
     <div class="absolute inset-0 bg-black/60" />
 
-    <!-- コンテンツ -->
     <div class="relative z-10 max-w-4xl mx-auto w-full px-6 pb-12 pt-40">
-      <!-- カテゴリバッジ -->
       <p class="text-[#00c4b3] text-xs font-bold tracking-widest uppercase mb-4">
         {school.category}
       </p>
-
-      <!-- 教室名 -->
       <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight mb-6">
         {school.name}
       </h1>
-
-      <!-- 場所 -->
       <div class="flex items-center gap-2 text-white/80 text-sm mb-6">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
         </svg>
         <span>{school.location}</span>
       </div>
-
-      <!-- タグ -->
       <div class="flex flex-wrap gap-2">
         {school.tags.map((tag) => (
           <span class="text-xs font-bold text-white/90 bg-white/15 border border-white/25 px-3 py-1 rounded-full">
@@ -115,170 +130,50 @@ const skills = [
     </div>
   </section>
 
-  <!-- ============ 発想転換：問題 → 解決 ============ -->
+  <!-- ============ 教学理念（経営者の話） ============ -->
   <section class="py-24 px-6 bg-white">
     <div class="max-w-4xl mx-auto">
-      <p class="text-[#00c4b3] font-bold text-sm text-center mb-3 tracking-widest uppercase">
-        発想の転換
-      </p>
-      <h2 class="text-3xl sm:text-4xl font-black text-center text-gray-900 mb-16">
-        ゲームを<span class="text-[#00c4b3]">やめさせる</span>のではなく
-      </h2>
-
-      <div class="grid md:grid-cols-2 gap-6">
-        <!-- BEFORE -->
-        <div class="rounded-2xl p-8 border border-gray-100 bg-gray-50">
-          <p class="text-xs font-black tracking-widest uppercase text-gray-400 mb-4">BEFORE</p>
-          <p class="text-2xl mb-3">😩</p>
-          <h3 class="text-lg font-black text-gray-900 mb-3">「ゲームばかりで困る…」</h3>
-          <p class="text-sm text-gray-600 leading-relaxed">
-            なんとかやめさせて、勉強させよう。<br />
-            と思っても、うまくいかずにイライラしてしまう。
-          </p>
-        </div>
-
-        <!-- AFTER -->
-        <div class="rounded-2xl p-8 border border-[#00c4b3]/30 bg-[#e6faf9]">
-          <p class="text-xs font-black tracking-widest uppercase text-[#00c4b3] mb-4">AFTER</p>
-          <p class="text-2xl mb-3">🚀</p>
-          <h3 class="text-lg font-black text-gray-900 mb-3">「ゲームで力が身につく」</h3>
-          <p class="text-sm text-gray-600 leading-relaxed">
-            ゲームを積極的に使って、<br />
-            <strong class="text-gray-800">論理的思考・問題解決力・英語力</strong>まで身につける。
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 私たちの考え ============ -->
-  <section class="py-24 px-6 bg-gray-50">
-    <div class="max-w-3xl mx-auto text-center">
-      <p class="text-[#00c4b3] font-bold text-sm mb-3 tracking-widest uppercase">
-        私たちの考え
-      </p>
-      <h2 class="text-3xl sm:text-4xl font-black text-gray-900 mb-8 leading-tight">
-        英語はツール。<br />
-        大切なのは、<span class="text-[#00c4b3]">"何ができるか"</span>。
-      </h2>
-
-      <p class="text-gray-600 leading-relaxed text-base sm:text-lg mb-4">
-        これからの時代を生きるお子様に必要なのは、英語力ではなく、
-        英語をツールとして使って<strong class="text-gray-800">"何ができるか？"</strong>の中身です。
-      </p>
-      <p class="text-gray-600 leading-relaxed text-base sm:text-lg">
-        その"中身"の一つになりえるのが、<br class="hidden sm:inline" />
-        ゲームから入り、プログラミングを基礎とした<strong class="text-gray-800">技術開発力</strong>。
-      </p>
-    </div>
-  </section>
-
-  <!-- ============ スーパー国際人 ============ -->
-  <section class="py-24 px-6 bg-white">
-    <div class="max-w-5xl mx-auto">
-      <p class="text-[#00c4b3] font-bold text-sm text-center mb-3 tracking-widest uppercase">
-        VISION
-      </p>
-      <h2 class="text-3xl sm:text-4xl font-black text-center text-gray-900 mb-4">
-        コミオ®が育てる<br class="sm:hidden" />「<span class="text-[#00c4b3]">スーパー国際人</span>」
-      </h2>
-      <p class="text-center text-gray-500 mb-16 max-w-xl mx-auto">
-        英語だけできても、伝える"中身"がなければ意味がない。<br class="hidden sm:inline" />
-        私たちが大切にしている、3つの軸。
+      <p class="text-sm font-black text-gray-400 tracking-widest uppercase mb-12">
+        経営者の理念
       </p>
 
-      <div class="grid sm:grid-cols-3 gap-6">
-        {pillars.map((p) => (
-          <div class="bg-gray-50 rounded-2xl p-8 text-center">
-            <p class="text-5xl font-black text-gray-100 mb-2">{p.num}</p>
-            <h3 class={`text-lg font-black mb-3 ${p.color}`}>{p.title}</h3>
-            <p class="text-gray-600 leading-relaxed text-sm">{p.desc}</p>
+      <div>
+        {school.philosophy.map((section, i) => (
+          <div class={i > 0 ? "mt-10" : ""}>
+
+            <h3 class="text-[1.2rem] font-black text-gray-900 mb-3 leading-snug">
+              {section.heading}
+            </h3>
+
+            {section.image && (
+              <img
+                src={section.image}
+                alt={section.heading}
+                class="w-full rounded-xl mb-6 object-cover max-h-64"
+              />
+            )}
+
+            <div class="prose-school" set:html={section.body} />
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ============ 専門分野は"好き"から ============ -->
-  <section class="py-24 px-6 bg-gray-50">
-    <div class="max-w-3xl mx-auto text-center">
-      <p class="text-[#00c4b3] font-bold text-sm mb-3 tracking-widest uppercase">
-        METHOD
+  <!-- ============ 教室特色 ============ -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-black text-gray-400 tracking-widest uppercase mb-8">
+        教室の特色
       </p>
-      <h2 class="text-3xl sm:text-4xl font-black text-gray-900 mb-6 leading-tight">
-        専門分野は、<br />
-        <span class="text-[#00c4b3]">"好き"</span>から入るのが一番。
-      </h2>
-      <p class="text-gray-600 leading-relaxed text-base sm:text-lg mb-10">
-        好きだからこそ、夢中になれて、好奇心が広がって、自分から学ぶようになる。
-      </p>
-
-      <p class="text-gray-400 text-sm mb-2">やらされるのではなく</p>
-      <p class="text-xl sm:text-2xl font-black text-[#00c4b3]">自立して、自分から学ぶ。</p>
-    </div>
-  </section>
-
-  <!-- ============ 身につく力 ============ -->
-  <section class="py-24 px-6 bg-white">
-    <div class="max-w-5xl mx-auto">
-      <p class="text-[#00c4b3] font-bold text-sm text-center mb-3 tracking-widest uppercase">
-        PROGRAM
-      </p>
-      <h2 class="text-3xl sm:text-4xl font-black text-center text-gray-900 mb-4">
-        マインクラフトから始めて、<br class="sm:hidden" />
-        <span class="text-[#00c4b3]">AI時代に必要な力</span>を。
-      </h2>
-      <p class="text-center text-gray-500 mb-16 max-w-2xl mx-auto">
-        お子さんが大好きなゲームから入り、専門分野を習得します。<br class="hidden sm:inline" />
-        身につくのは、AI時代に最も大切な3つの力。
-      </p>
-
-      <div class="grid sm:grid-cols-3 gap-6 mb-10">
-        {skills.map((s) => (
-          <div class="bg-gray-50 rounded-2xl p-8 text-center">
-            <div class={`inline-flex items-center justify-center w-16 h-16 rounded-full ${s.bg} mb-5 text-3xl`}>
-              {s.icon}
-            </div>
-            <h3 class={`text-lg font-black mb-3 ${s.color}`}>{s.title}</h3>
-            <p class="text-gray-600 leading-relaxed text-sm">{s.desc}</p>
-          </div>
-        ))}
-      </div>
-
-      <!-- 国際資格カード -->
-      <div class="bg-[#00c4b3] rounded-2xl px-8 py-6 flex flex-col sm:flex-row items-center gap-4">
-        <div class="text-center sm:text-left">
-          <p class="text-white/70 text-xs font-bold uppercase tracking-widest mb-1">BONUS</p>
-          <p class="text-white text-xl font-black">国際資格にも挑戦できる</p>
-        </div>
-        <div class="w-px bg-white/20 hidden sm:block self-stretch" />
-        <p class="text-white/90 text-sm leading-relaxed sm:flex-1 text-center sm:text-left">
-          上位クラスでは、世界に通用する国際資格の取得も可能。<br />
-          禁止してもいずれゲームをやっているなら、将来使える資格に切り替えませんか？
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ バイリンガル ============ -->
-  <section class="py-24 px-6 bg-gray-50">
-    <div class="max-w-3xl mx-auto text-center">
-      <p class="text-[#00c4b3] font-bold text-sm mb-3 tracking-widest uppercase">
-        BILINGUAL OPTION
-      </p>
-      <h2 class="text-2xl sm:text-3xl font-black text-gray-900 mb-4 leading-tight">
-        レッスンは、<span class="text-[#00c4b3]">すべて英語で受講も可能</span>。
-      </h2>
-      <p class="text-gray-500 leading-relaxed">
-        プログラミングと英語を、同時に習得できます。
-      </p>
+      <div class="prose-school" set:html={school.features} />
     </div>
   </section>
 
   <!-- ============ CTA ============ -->
   <section class="py-24 px-6 bg-white">
     <div class="max-w-2xl mx-auto text-center">
-      <p class="text-[#00c4b3] font-bold text-sm mb-3 tracking-widest uppercase">
+      <p class="text-[#00c4b3] font-bold text-xs mb-3 tracking-widest uppercase">
         体験レッスン
       </p>
       <h2 class="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
@@ -287,16 +182,14 @@ const skills = [
       <p class="text-gray-500 mb-10 leading-relaxed">
         お子さんがゲームに夢中になる時間を、未来につながる学びの時間へ。
       </p>
-
       <a
-        href="https://www.reservestock.jp/inquiry/MDVkMTVmN2U2O"
+        href={school.cta.href}
         target="_blank"
         rel="noopener noreferrer"
         class="inline-block bg-[#00c4b3] hover:bg-[#00a89a] text-white font-black text-lg px-10 py-4 rounded-full transition-colors shadow-lg shadow-[#00c4b3]/30"
       >
-        体験レッスンを申し込む →
+        {school.cta.label} →
       </a>
-
       <p class="mt-8">
         <a href="/" class="text-sm text-gray-500 hover:text-[#00c4b3] transition-colors">
           ← トップへ戻る
@@ -307,3 +200,53 @@ const skills = [
 
   <Footer />
 </Layout>
+
+<style>
+  /* set:html で挿入されたコンテンツ向けのスタイル */
+  .prose-school :global(p) {
+    color: #4b5563;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .prose-school :global(p:last-child) {
+    margin-bottom: 0;
+  }
+  .prose-school :global(strong) {
+    color: #1f2937;
+    font-weight: 700;
+  }
+  .prose-school :global(blockquote) {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.25rem;
+    border-left: 4px solid #00c4b3;
+    background: #e6faf9;
+    border-radius: 0 0.75rem 0.75rem 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0a5c57;
+    line-height: 1.5;
+  }
+  .prose-school :global(ul) {
+    margin: 0.75rem 0;
+    padding-left: 0;
+    list-style: none;
+  }
+  .prose-school :global(ul li) {
+    position: relative;
+    padding-left: 1.5rem;
+    color: #374151;
+    font-weight: 600;
+    line-height: 1.75;
+    margin-bottom: 0.5rem;
+  }
+  .prose-school :global(ul li::before) {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #00c4b3;
+    font-weight: 900;
+    font-size: 0.875rem;
+  }
+</style>
