@@ -1,0 +1,27 @@
+---
+interface Props {
+  ctaHref: string;
+}
+const { ctaHref } = Astro.props;
+---
+
+<!-- schools ページ専用ヘッダー：ナビなし・ロゴリンクなし -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+  <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+    <!-- ロゴ（リンクなし） -->
+    <div class="flex items-center gap-2">
+      <img src="/images/logo.png" alt="OrangeApple ロゴ" class="h-6 w-auto" />
+      <span class="hidden sm:block text-sm font-bold text-gray-500">プログラミングスクール</span>
+    </div>
+
+    <!-- CTA -->
+    <a
+      href={ctaHref}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="bg-[#00c4b3] hover:bg-[#00a89a] text-white text-sm font-bold px-5 py-2.5 rounded-full transition-colors"
+    >
+      まずは気軽にご相談を
+    </a>
+  </div>
+</header>
