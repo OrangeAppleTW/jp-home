@@ -2,6 +2,9 @@
 import Layout from "../../layouts/Layout.astro";
 import SchoolHeader from "../../components/SchoolHeader.astro";
 import Footer from "../../components/Footer.astro";
+import CourseStages from "../../components/CourseStages.astro";
+import ItsSection from "../../components/ItsSection.astro";
+import Faq from "../../components/Faq.astro";
 
 // 学校情報
 const school = {
@@ -245,20 +248,14 @@ const skills = [
         ))}
       </div>
 
-      <!-- 国際資格カード -->
-      <div class="bg-[#00c4b3] rounded-2xl px-8 py-6 flex flex-col sm:flex-row items-center gap-4">
-        <div class="text-center sm:text-left">
-          <p class="text-white/70 text-xs font-bold uppercase tracking-widest mb-1">BONUS</p>
-          <p class="text-white text-xl font-black">国際資格にも挑戦できる</p>
-        </div>
-        <div class="w-px bg-white/20 hidden sm:block self-stretch" />
-        <p class="text-white/90 text-sm leading-relaxed sm:flex-1 text-center sm:text-left">
-          上位クラスでは、世界に通用する国際資格の取得も可能。<br />
-          禁止してもいずれゲームをやっているなら、将来使える資格に切り替えませんか？
-        </p>
-      </div>
     </div>
   </section>
+
+  <!-- ============ コースの流れ ============ -->
+  <CourseStages />
+
+  <!-- ============ 国際資格 ============ -->
+  <ItsSection />
 
   <!-- ============ バイリンガル ============ -->
   <section class="py-24 px-6 bg-gray-50">
@@ -274,6 +271,9 @@ const skills = [
       </p>
     </div>
   </section>
+
+  <!-- ============ よくある質問 ============ -->
+  <Faq />
 
   <!-- ============ CTA ============ -->
   <section class="py-24 px-6 bg-white">
