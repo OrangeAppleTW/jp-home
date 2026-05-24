@@ -8,21 +8,23 @@ const { ctaHref } = Astro.props;
 <!-- schools ページ専用ヘッダー：ナビなし・ロゴリンクなし -->
 <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
   <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
-    <!-- コラボロゴ -->
-    <div class="flex items-center gap-3">
-      <img src="/images/logo.png" alt="OrangeApple ロゴ" class="h-6 w-auto" />
-      <span class="text-sm font-bold text-gray-400">×</span>
-      <img src="/images/schools/commio_logo.png" alt="commio ロゴ" class="h-6 w-auto" />
+    <!-- コラボロゴ：スマホでは縮小表示 -->
+    <div class="flex items-center gap-1.5 sm:gap-3">
+      <img src="/images/logo.png" alt="OrangeApple ロゴ" class="h-4 sm:h-6 w-auto" />
+      <span class="text-xs sm:text-sm font-bold text-gray-400">×</span>
+      <img src="/images/schools/commio_logo.png" alt="commio ロゴ" class="h-4 sm:h-6 w-auto" />
     </div>
 
-    <!-- CTA -->
+    <!-- CTA：スマホでは短縮テキスト・小さいpadding -->
     <a
       href={ctaHref}
       target="_blank"
       rel="noopener noreferrer"
-      class="bg-[#00c4b3] hover:bg-[#00a89a] text-white text-sm font-bold px-5 py-2.5 rounded-full transition-colors"
+      class="bg-[#00c4b3] hover:bg-[#00a89a] text-white text-xs sm:text-sm font-bold px-3 py-2 sm:px-5 sm:py-2.5 rounded-full transition-colors whitespace-nowrap"
     >
-      まずは気軽にご相談を
+      <!-- スマホでは短縮テキスト、PC では全文表示 -->
+      <span class="sm:hidden">相談する</span>
+      <span class="hidden sm:inline">まずは気軽にご相談を</span>
     </a>
   </div>
 </header>
