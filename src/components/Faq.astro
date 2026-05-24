@@ -10,15 +10,19 @@ const faqs = [
   },
   {
     q: "パソコンは必要ですか？",
-    a: "受講にはPC（WindowsまたはMac）が必要です。お持ちでない場合はお気軽にご相談ください。",
+    a: "受講にはPC（WindowsまたはMac）が必要です。",
   },
   {
     q: "英語や数学が苦手でも大丈夫ですか？",
-    a: "問題ありません。コードを読み書きする力は、授業を通じて自然に身につきます。",
+    a: "問題ありません。コードを読み書きする力は、授業を通じて自然に身につきます。\nレッスンは、オールイングリッシュ（すべて英語）か、すべて日本語、のいずれかをお選びいただけます。英語ですと理解に不安のあるお子様や、日本語でしっかり中身を理解したい方は、日本語コースをご選択ください。",
   },
   {
     q: "国際資格（ITS）とは何ですか？",
     a: "Microsoftが認定する国際IT資格「IT Specialist（ITS）」です。Stage 3（Python・JavaScript）修了後に受験でき、合格率は約80%です。",
+  },
+  {
+    q: "国際ITS資格はどのように活用できますか？",
+    a: "国際的に通用するITスキルを持っていることが証明できるため、受験時の推薦・総合型選抜、海外留学への応募、海外大への出願、就職活動時の履歴書、にご活用いただけます。",
   },
   {
     q: "AIを学ぶのは難しくないですか？",
@@ -45,7 +49,7 @@ const faqs = [
               <span>{faq.q}</span>
               <span class="text-[#00c4b3] text-xl transition-transform group-open:rotate-45">+</span>
             </summary>
-            <p class="px-6 pb-6 text-gray-600 leading-relaxed">{faq.a}</p>
+            <p class="px-6 pb-6 text-gray-600 leading-relaxed whitespace-pre-line">{faq.a}</p>
           </details>
         ))
       }
